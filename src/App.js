@@ -68,10 +68,18 @@ class PassForm extends Component {
     handleSubmit(e){
     let pass = e.target.password.value;
     let confirmed = e.target.confirm.value;
-
-    (pass === confirmed) ? alert('PASS') : alert("NOPE");
-
-
+    if(pass === confirmed){
+      alert('PASS');
+    }
+    else{
+      this.setState({
+        [email]: e.target.value.val(),
+        [password]: e.target.value.val(),
+        [confirm]: e.target.value.val()
+      })
+      alert('NOPE')
+    }
+    // (pass === confirmed) ? alert('PASS') : alert("NOPE");
       e.preventDefault();
     }
 
